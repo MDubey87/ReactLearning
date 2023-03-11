@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import "./App.css";
-import ExpenseItem from "./components/Expenses/ExpenseItem/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -25,8 +25,13 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+  const addExpenseHandler = (expense) => {
+    expenses.push(expense);
+    console.log(expenses);
+  };
   return (
     <div className="App">
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );
