@@ -1,9 +1,9 @@
-import ExpenseItem from "./ExpenseItem/ExpenseItem";
 import Card from "../UI/Card/Card";
 import "./Expenses.css";
 import ExpensesFilter from "./ExpenseFilter/ExpenseFilter";
 import { useState } from "react";
 import ExpensesList from "./ExpensesList/ExpensesList";
+import ExpensesChart from "./ExpensesChart/ExpensesChart";
 const Expenses = (props) => {
   const [filteredYear, setFilteredYear] = useState("2022");
 
@@ -21,6 +21,7 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+        <ExpensesChart expenses={filteredExpenses} />
         <ExpensesList items={filteredExpenses} />
         {/* {filteredExpenses.length === 0 && <p>No Expense Found!!</p>}
       {filteredExpenses.length > 0 &&
