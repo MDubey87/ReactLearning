@@ -1,8 +1,9 @@
 // import logo from './logo.svg';
 import { useState } from "react";
 import "./App.css";
-import Expenses from "./components/Expenses/Expenses";
+
 import NewExpense from "./components/NewExpense/NewExpense";
+import Expenses from "./components/Expenses/Expenses";
 const INITIAL_EXPENSES = [
   {
     id: "e1",
